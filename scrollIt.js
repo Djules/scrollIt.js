@@ -22,13 +22,13 @@
         scrollTime: 600,
         activeClass: 'active',
         onPageChange: null,
-        topOffset : { val: 0}
+        topOffset : {val: 0}
     };
 
     var listeners = {
         scroll : null,
         keydown: null,
-        click: null,
+        click: null
     };
 
 
@@ -54,10 +54,7 @@
             if(ndx < 0 || ndx > lastIndex) return;
 
             var targetTop = $('[data-scroll-index=' + ndx + ']').offset().top + settings.topOffset.val + 1;
-            $('html,body').animate({
-                scrollTop: targetTop,
-                easing: settings.easing
-            }, settings.scrollTime);
+            $('html,body').animate({scrollTop: targetTop}, settings.scrollTime, settings.easing);
         };
 
         /**
